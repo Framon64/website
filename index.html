@@ -25,7 +25,7 @@
       
         }
 
-        .circle {
+        .user_photo {
             width: 100px;
             height: 100px;
             border: 1px solid black;
@@ -112,9 +112,9 @@
 <body>
     
     <div id="main">
-        <div class="circle">
-            <img src="https://cdn.icon-icons.com/icons2/1796/PNG/512/shoppingbasket3_114870.png" alt="">
-          </div>
+        <div class="user_photo", id="user_photo">
+        
+        </div>
         </div>
         <form id="form">
             <input type="text" placeholder="Искать здесь...">
@@ -125,11 +125,16 @@
         <p>Привет, тут будет магазин</p>
         <button id="buy">Купить</button>
     </div>
-
-    </form>
-    
     
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let img = document.getElementById("user_photo")
+
+        img.innerHTML = `${tg.initDataUnsafe.user.photo_url}`
+        photo_url.appendChild(img)
+    </script>
     
+
 </body>
 </html
