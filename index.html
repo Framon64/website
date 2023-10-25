@@ -7,7 +7,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
         
-        * {box-sizing: border-box;}
+        
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+      
+        }
         form {
         position: relative;
         width: 300px;
@@ -34,25 +50,12 @@
         border-radius: 0 5px 5px 0;
         cursor: pointer;
         }
+
         button:before {
         content: "\f002";
         font-family: FontAwesome;
         font-size: 16px;
         color: #F9F0DA;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 200;
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-      
         }
         
         #main {
