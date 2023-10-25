@@ -127,8 +127,10 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        let img = document.getElementById("user_photo")
-
+    
+        let usercard = document.getElementById("user_photo")
+        let img = document.createElement("img")
+    
         img.innerText = `${tg.initDataUnsafe.photo_url}`
         photo_url.appendChild(img)
     </script>
