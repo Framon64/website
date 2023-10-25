@@ -112,9 +112,7 @@
 <body>
     
     <div id="main">
-        <div class="user_photo", id="user_photo">
-        
-        </div>
+        <div class="user_photo", id="user_photo"></div>
         </div>
         <form id="form">
             <input type="text" placeholder="Искать здесь...">
@@ -131,7 +129,7 @@
         let tg = window.Telegram.WebApp;
         let img = document.getElementById("user_photo")
 
-        img.innerHTML = `${tg.initDataUnsafe.user.photo_url}`
+        img.innerText = `${tg.initDataUnsafe.photo_url}`
         photo_url.appendChild(img)
     </script>
     
