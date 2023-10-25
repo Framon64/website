@@ -4,13 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bot Shop</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+      
+        }
+        
+        #main {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 70px;
+            margin-bottom: 30px auto;
+        }
+
+        img {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        button {
+            border: 0;
+            border-radius: 5 px;
+            margin-top: 50px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }   
+
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
+    </style>
 </head>
 <body>
     <div id="main">
         <h1>Онлайн магазин</h1>
-        <img src="https://avatars.mds.yandex.net/i?id=bd5342583c598a0e8dce9ac41536175b14f2b7ac-9182438-images-thumbs&n=13">
+        <img src="https://cdn.icon-icons.com/icons2/1796/PNG/512/shoppingbasket3_114870.png">
         <p>Привет, тут будет магазин</p>
         <button id="buy">Купить</button>
     </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 </body>
 </html>
