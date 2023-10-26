@@ -33,6 +33,9 @@
             height: 40px;
             border: 1px solid black;
             border-radius: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             margin-right: 10px;
         }
 
@@ -65,12 +68,12 @@
             const user_name = document.getElementById("user_name");
 
             // Выполняем запрос к API Telegram для получения информации о пользователе
-            fetch('https://api.telegram.org/botYOUR_BOT_TOKEN/getMe')
+            fetch('https://api.telegram.org/botsktop/testApps/main.py/getMe')
                 .then(response => response.json())
                 .then(data => {
                     if (data.ok) {
                         const user = data.result;
-                        const photoURL = `https://api.telegram.org/file/bot6432360659:AAFAMrYGAxzC4Re_4VPA5_jPCFdMlh03_Zk/${user.photo}`;
+                        const photoURL = `https://api.telegram.org/botsktop/testApps/main.py/getUserProfilePhotos?user_id=${user.id}&limit=1`
                         user_photo.style.backgroundImage = `url(${photoURL})`;
                         user_name.innerText = user.first_name;
                     }
