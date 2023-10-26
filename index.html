@@ -6,9 +6,6 @@
     <title>Bot Shop</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-        
-        
-        
 
         * {
             margin: 0;
@@ -16,103 +13,39 @@
             box-sizing: border-box;
         }
 
-        
         body {
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
-      
+        }
+
+        .user_info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
         }
 
         .user_photo {
-            width: 100px;
-            height: 100px;
+            width: 40px;
+            height: 40px;
             border: 1px solid black;
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 50%;
+            margin-right: 10px;
         }
 
-        #form {
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-        }
+        /* Ваши стили CSS */
 
-        input {
-            width: 100%;
-            height: 42px;
-            padding-left: 10px;
-            border: 2px solid #7BA7AB;
-            border-radius: 5px;
-            outline: none;
-            background: #F9F0DA;
-            color: #9E9C9C;
-        }
-
-        button {
-            right: 0px;
-            width: 42px;
-            height: 42px;
-            border: none;
-            background: #7BA7AB;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-
-        button:before {
-            content: "\f002";
-            font-family: FontAwesome;
-            font-size: 16px;
-            color: #F9F0DA;
-        }
-        
-        #main {
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            margin-top: 70px;
-            margin-bottom: 30px auto;
-        }
-
-        img {
-            width: 350px;
-            margin: 0 auto;
-        }
-        
-        P {
-            width: 350xp;
-            margin: 0 auto;
-        }
-
-        button {
-            border: 0;
-            border-radius: 5 px;
-            margin-top: 50px;
-            height: 60px;
-            width: 200px;
-            font-size: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 500ms ease;
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
-        }   
-
-        button:hover {
-            background: var(--tg-theme-secondary-bg-color);
-        }
     </style>
 </head>
 <body>
-    
     <div id="main">
-        <div class="user_photo" id="user_photo"></div>
+        <div class="user_info" id="user_info">
+            <div class="user_photo" id="user_photo"></div>
+            <div class="user_name" id="user_name"></div>
+        </div>
         <form id="form">
             <input type="text" placeholder="Искать здесь...">
             <button type="submit"></button>
@@ -122,19 +55,33 @@
         <p>Привет, тут будет магазин</p>
         <button id="buy">Купить</button>
     </div>
-    
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let tg = window.Telegram.WebApp;
-        let usercard = document.getElementById("user_photo");
-        
-        if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.photo_url) {
-            let img = document.createElement("img");
-            img.src = tg.initDataUnsafe.user.photo_url;
-            usercard.appendChild(img);
-        } else {
-            console.error("URL фотографии пользователя не найден.");
+        // Функция для получения информации о пользователе
+        function getUserInfo() {
+            const user_info = document.getElementById("user_info");
+            const user_photo = document.getElementById("user_photo");
+            const user_name = document.getElementById("user_name");
+
+            // Выполняем запрос к API Telegram для получения информации о пользователе
+            fetch('https://api.telegram.org/botYOUR_BOT_TOKEN/getMe')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        const user = data.result;
+                        const photoURL = `https://api.telegram.org/file/bot6432360659:AAFAMrYGAxzC4Re_4VPA5_jPCFdMlh03_Zk/${user.photo}`;
+                        user_photo.style.backgroundImage = `url(${photoURL})`;
+                        user_name.innerText = user.first_name;
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         }
+
+        // Вызываем функцию для получения информации о пользователе при загрузке страницы
+        getUserInfo();
     </script>
 </body>
 </html>
