@@ -125,11 +125,15 @@
     
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let usercard = document.getElementById("user_photo");
-    let img = document.createElement("img");
-    img.src = tg.initDataUnsafe.user.photo_url;
-    usercard.appendChild(img);
-    console.log(tg.initDataUnsafe.user.photo_url);
+        // Инициализируем объект tg, только после его загрузки
+        document.addEventListener('DOMContentLoaded', function () {
+            let tg = window.Telegram.WebApp;
+            let usercard = document.getElementById("user_photo");
+            let img = document.createElement("img");
+            img.src = tg.initDataUnsafe.user.photo_url;
+            usercard.appendChild(img);
+            console.log(tg.initDataUnsafe.user.photo_url);
+        });
     </script>
 </body>
 </html>
