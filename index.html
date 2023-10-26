@@ -61,6 +61,9 @@
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        // Замените 'YOUR_BOT_TOKEN' на токен вашего бота
+        const botToken = 'YOUR_BOT_TOKEN';
+
         // Функция для получения информации о пользователе
         function getUserInfo() {
             const user_info = document.getElementById("user_info");
@@ -68,14 +71,26 @@
             const user_name = document.getElementById("user_name");
 
             // Выполняем запрос к API Telegram для получения информации о пользователе
-            fetch('https://api.telegram.org/botsktop/testApps/main.py/getMe')
+            fetch(`https://api.telegram.org/bot${botToken}/getMe`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.ok) {
                         const user = data.result;
-                        const photoURL = `https://api.telegram.org/botsktop/testApps/main.py/getUserProfilePhotos?user_id=${user.id}&limit=1`
-                        user_photo.style.backgroundImage = `url(${photoURL})`;
                         user_name.innerText = user.first_name;
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+            // Выполняем запрос к API Telegram для получения фотографии профиля пользователя
+            fetch(`https://api.telegram.org/bot${botToken}/getUserProfilePhotos?user_id=USER_ID&limit=1`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok && data.result.photos.length > 0) {
+                        const file_id = data.result.photos[0][0].file_id;
+                        const photoURL = `https://api.telegram.org/file/bot${botToken}/${file_id}`;
+                        user_photo.style.backgroundImage = `url(${photoURL})`;
                     }
                 })
                 .catch(error => {
@@ -85,6 +100,7 @@
 
         // Вызываем функцию для получения информации о пользователе при загрузке страницы
         getUserInfo();
+
     </script>
 </body>
 </html>
