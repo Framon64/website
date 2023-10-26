@@ -20,21 +20,25 @@
             background: var(--tg-theme-bg-color);
         }
 
-        .user_photo {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-            border-radius: 50%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: 20px auto;
+        .user_info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .user_name {
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div id="main">
-        <div class="user_photo" id="user_photo"></div>
+        <div class="user_info" id="user_info">
+            <div class="user_name" id="user_name"></div>
+        </div>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -42,18 +46,17 @@
         // Замените 'YOUR_BOT_TOKEN' на токен вашего бота
         const botToken = '6432360659:AAFAMrYGAxzC4Re_4VPA5_jPCFdMlh03_Zk';
 
-        // Функция для получения фотографии профиля пользователя
-        function getUserPhoto() {
-            const user_photo = document.getElementById("user_photo");
+        // Функция для получения информации о пользователе
+        function getUserInfo() {
+            const user_name = document.getElementById("user_name");
 
-            // Выполняем запрос к API Telegram для получения фотографии профиля пользователя
-            fetch(`https://api.telegram.org/bot${botToken}/getUserProfilePhotos?user_id=@me&limit=1`)
+            // Выполняем запрос к API Telegram для получения информации о пользователе
+            fetch(`https://api.telegram.org/bot${botToken}/getMe`)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.ok && data.result.photos.length > 0) {
-                        const file_id = data.result.photos[0][0].file_id;
-                        const photoURL = `https://api.telegram.org/file/bot${botToken}/${file_id}`;
-                        user_photo.style.backgroundImage = `url(${photoURL})`;
+                    if (data.ok) {
+                        const user = data.result;
+                        user_name.innerText = user.first_name;
                     }
                 })
                 .catch(error => {
@@ -61,8 +64,8 @@
                 });
         }
 
-        // Вызываем функцию для получения фотографии профиля пользователя при загрузке страницы
-        getUserPhoto();
+        // Вызываем функцию для получения информации о пользователе при загрузке страницы
+        getUserInfo();
     </script>
 </body>
 </html>
