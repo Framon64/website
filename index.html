@@ -23,45 +23,80 @@
         .user_info {
             position: absolute;
             top: 10px;
-            right: 10px;
+            left: 10px;
             display: flex;
             align-items: center;
+        }
+
+        .user_photo {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .user_name {
             font-size: 16px;
             font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .telegram_button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div id="main">
         <div class="user_info" id="user_info">
+            <div class="user_photo" id="user_photo"></div>
             <div class="user_name" id="user_name"></div>
         </div>
+        <button class="telegram_button" id="telegram_button">Телеграмм Бот</button>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         // Замените 'YOUR_BOT_TOKEN' на токен вашего бота
-        const botToken = '6432360659:AAFAMrYGAxzC4Re_4VPA5_jPCFdMlh03_Zk';
+        const botToken = 'YOUR_BOT_TOKEN';
 
         // Функция для получения информации о пользователе
         function getUserInfo() {
             const user_name = document.getElementById("user_name");
+            const user_photo = document.getElementById("user_photo");
+            const telegram_button = document.getElementById("telegram_button");
 
-            // Выполняем запрос к API Telegram для получения информации о пользователе
-            fetch(`https://api.telegram.org/bot${botToken}/getMe`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.ok) {
-                        const user = data.result;
-                        user_name.innerText = user.first_name;
-                    }
-                })
-                .catch(error => {
-                    console.error(error);
-                });
+            // Проверяем, авторизован ли пользователь
+            if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+                const user = tg.initDataUnsafe.user;
+                user_name.innerText = user.first_name;
+
+                // Проверяем, есть ли у пользователя фото профиля
+                if (user.photo_url) {
+                    user_photo.style.backgroundImage = `url(${user.photo_url})`;
+                } else {
+                    // Если у пользователя нет фото, можно использовать стандартное изображение
+                    user_photo.style.backgroundImage = `url('file_0.jpg')`;
+                }
+
+                // Замените 'URL_К_СТАНДАРТНОМУ_ИЗОБРАЖЕНИЮ' на URL изображения по умолчанию
+                // и установите надпись на кнопке
+                telegram_button.innerText = "AppsTestingBot " + user.first_name;
+            } else {
+                user_name.innerText = "Пользователь не авторизован";
+                telegram_button.style.display = "none"; // Скрываем кнопку, если пользователь не авторизован
+            }
         }
 
         // Вызываем функцию для получения информации о пользователе при загрузке страницы
