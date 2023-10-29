@@ -17,12 +17,20 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
+            background: white;
+            position: relative;
         }
 
-        .user_info {
+        .shopping{
             position: absolute;
             top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center; 
+        }
+        .user_info {
+            position: absolute;
+            top: 40px;
             left: 10px;
             display: flex;
             align-items: center;
@@ -31,75 +39,100 @@
         .user_photo {
             width: 50px;
             height: 50px;
-            border: 1px solid black;
             border-radius: 50%;
+            margin-right: 10px;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            background: rgb(34, 26, 26);
         }
 
         .user_name {
             font-size: 16px;
             font-weight: bold;
-            margin-left: 10px;
         }
 
-        .telegram_button {
+        .bot_info {
             position: absolute;
             top: 10px;
             right: 10px;
-            padding: 10px 20px;
-            background-color: #0088cc;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .shopping{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center; 
+        }
+
+        .bot_name {
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
+
+    <div class="container">
+        <header>
+            <h1>Ваш магазин</h1>
+            <div class="shopping">
+                <img src="shop.png">
+                <img src="shopping.svg">
+                <span class="quentity">0</span>
+            </div>    
+        </header>
+    </div>
+
     <div id="main">
         <div class="user_info" id="user_info">
             <div class="user_photo" id="user_photo"></div>
+                <h1>Владимир</h1>
             <div class="user_name" id="user_name"></div>
         </div>
-        <button class="telegram_button" id="telegram_button">Телеграмм Бот</button>
+
+        <div class="bot_info" id="bot_info">
+            <div class="bot_name" id="bot_name">Your Bot</div>
+        </div>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        // Замените 'YOUR_BOT_TOKEN' на токен вашего бота
-        const botToken = 'YOUR_BOT_TOKEN';
-
-        // Функция для получения информации о пользователе
+        // Функция для получения информации о пользователе и имени бота
         function getUserInfo() {
-            const user_name = document.getElementById("user_name");
             const user_photo = document.getElementById("user_photo");
-            const telegram_button = document.getElementById("telegram_button");
+            const user_name = document.getElementById("user_name");
+            const bot_name = document.getElementById("bot_name");
 
             // Проверяем, авторизован ли пользователь
             if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
                 const user = tg.initDataUnsafe.user;
                 user_name.innerText = user.first_name;
 
-                // Проверяем, есть ли у пользователя фото профиля
+                // Получаем фото профиля пользователя
                 if (user.photo_url) {
                     user_photo.style.backgroundImage = `url(${user.photo_url})`;
-                } else {
-                    // Если у пользователя нет фото, можно использовать стандартное изображение
-                    user_photo.style.backgroundImage = `url('file_0.jpg')`;
                 }
-
-                // Замените 'URL_К_СТАНДАРТНОМУ_ИЗОБРАЖЕНИЮ' на URL изображения по умолчанию
-                // и установите надпись на кнопке
-                telegram_button.innerText = "AppsTestingBot " + user.first_name;
             } else {
                 user_name.innerText = "Пользователь не авторизован";
-                telegram_button.style.display = "none"; // Скрываем кнопку, если пользователь не авторизован
             }
+
+            // Получаем имя бота из API Telegram
+            fetch(`https://api.telegram.org/bot${tg.initDataUnsafe.token}/getMe`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        bot_name.innerText = data.result.first_name;
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         }
 
-        // Вызываем функцию для получения информации о пользователе при загрузке страницы
+        // Вызываем функцию для получения информации о пользователе и имени бота при загрузке страницы
         getUserInfo();
     </script>
 </body>
