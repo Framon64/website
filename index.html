@@ -1,105 +1,54 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-
-        body{
-            background-color: #bcd8df;
-            font-family: system-ui;
-        }
-
-        .container{     
-            width: 1000px;
-            margin: auto;
-            transition: 0.5s;
-        }
-
-        header{
-            display: grid;
-            grid-template-columns: 1fr 50px;
-            margin-top: 50px;
-        }
-
-        header .shopping{
-            position: relative;
-            text-align: right;
-        }
-        
-        heade.shopping img{
-            width: 50px;
-        }
-
-        header .shopping span{
-            background-color: red;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            position: absolute;
-            top: -5px;
-            left: 80%;
-            padding: 3px 10px;
-        }
-        
-        .list{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 20px;
-            row-gap: 20px;
-            margin-top: 50px;
-        }
-
-        .card{
-            position: fixed;
-            top: 0;
-            left: calc(100% - 500px);
-            width: 500px;
-            background-color: #453E3B;
-            height: 100vh;
-            transition: 0.5s;
-        }
-        .card h1{
-            color: #E8BC0E;
-            font-weight: 100;
-            margin: 0;
-            padding: 0 20px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-        }
-
-        .card .checkOut{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr)
-        }
-        
-    </style>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="container">
-        <header>
-            <h2>Мой магазин</h2>
-            <div class="shopping">
-                <img src="shopping.svg">
-                <span class="quantity">0</span>
+    <div class="panel">
+        <div class="left-side">
+          <img src="photo_2019-02-12_23-50-47.jpg" alt="Left Image">
+          <div class="text">Thepriceofart</div>
+        </div>
+        <div class="right-side">
+          <a href="https://t.me/the_price_of_art" class="button">
+            <img src="photo_2019-02-12_23-50-47.jpg" alt="Right Image" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+            <div class="text">@Thepriceofart</div>
+          </a>
+        </div>
+        
+    </div>
+    <div class="search-container">
+        <input type="Поиск">
+    </div>
+    <div class="product-container">
+        <div class="product">
+            <img src="photo_2019-02-12_23-50-47.jpg" alt="Product Image 1">
+            <div class="product-details">
+                <h3 class="product-title">Название товара 1</h3>
+                <p class="product-price">Цена: $19.99</p>
+                <button class="buy-button">Купить</button>
             </div>
-        </header>
-        <div class="list">
-    </div>        
-    <div class="card">
-        <h1>Card</h1>
-        <ul class="listCard"></div>
-        <div class="checkOut">
-            <div class="total">0</div>
-            <div class="closeShopping">Close</div>
+        </div>
+
+        <div class="product">
+            <img src="photo_2019-02-12_23-50-47.jpg" alt="Product Image 2">
+            <div class="product-details">
+                <h3 class="product-title">Название товара 2</h3>
+                <p class="product-price">Цена: $29.99</p>
+                <button class="buy-button">Купить</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="photo_2019-02-12_23-50-47.jpg" alt="Product Image 3">
+            <div class="product-details">
+                <h3 class="product-title">Название товара 3</h3>
+                <p class="product-price">Цена: $39.99</p>
+                <button class="buy-button">Купить</button>
+            </div>
         </div>
     </div>
 </body>
