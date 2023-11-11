@@ -2,12 +2,13 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #cab1b1;
-  }
-  
-  .panel {
+}
+
+.panel {
     position: fixed;
     top: 0;
     left: 50%;
@@ -19,25 +20,25 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 1000px;
-  }
-  
-  .left-side,
-  .right-side,
-  .button {
+    z-index: 2; /* Установим z-index выше 1 (или любого другого числа) */
+}
+
+.left-side,
+.right-side,
+.button {
     align-items: center;
     padding: 20px;
-  }
-  
-  
-  .left-side img,
-  .right-side img {
+}
+
+.left-side img,
+.right-side img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-left: 10px; /* Вернули свойство margin-left на обычное */
-  }
-  
-  .button {
+    margin-left: 10px;
+}
+
+.button {
     display: inline-flex;
     align-items: center;
     padding: 10px 20px;
@@ -47,31 +48,36 @@ body {
     text-decoration: none;
     border-radius: 5px;
     margin-left: auto;
-  }
-  
-  .left-side,
-  .right-side {
-    flex-shrink: 0;
-  }
-  
-  .search-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 20px;
-    max-width: 800px; /* Ограничиваем максимальную ширину товаров */
 }
-  
-  
-  
-  /* ... ваши текущие стили ... */
 
-  body {
+.left-side,
+.right-side {
+    flex-shrink: 0;
+}
+
+.search-container {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 1000px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    z-index: 1; /* Установим z-index меньше 2 (или любого другого числа) */
+}
+
+.search-container input {
+    width: calc(100% - 20px); /* Используем ширину 100% с вычетом отступов 10px с каждой стороны */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .product-container {
@@ -79,11 +85,11 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
-    max-width: 800px; /* Ограничиваем максимальную ширину товаров */
+    max-width: 800px;
 }
 
 .product {
-    flex: 0 0 calc(30% - 10px); /* 30% ширины контейнера с небольшим отступом */
+    flex: 0 0 calc(30% - 10px);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -122,11 +128,3 @@ body {
     cursor: pointer;
     font-size: 14px;
 }
-
-/* ... ваши текущие стили ... */
-
-
-
-
-
-
