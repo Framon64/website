@@ -1,11 +1,8 @@
-* {
-    max-width: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .header {
     align-items: center;
+    max-width: 390px;
 }
 
 .profile {
