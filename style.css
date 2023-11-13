@@ -1,5 +1,4 @@
-* {
-   
+* {   
     margin-top: 2px;    
     max-width: 406px;
     color: var(--tg-theme-text-color);
@@ -16,15 +15,15 @@ header {
 
 .profile1 {
     border-radius: 50%;
-    height: 25px;
-    width: 25px;
+    height: 40px;
+    width: 40px;
     vertical-align: middle;
 }
 
 .profile2 {
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    height: 35px;
+    width: 35px;
     vertical-align: middle;
 }
 
@@ -68,23 +67,23 @@ header {
 }
 
 .left a {
-    font-size: 50%;
+    font-size: 70%;
     text-decoration: none;
 ;
 }
 
 .left span {
-    font-size: 50%;
+    font-size: 80%;
 }
 
 
 
 .button-text {
-    font-size: 50%; /* Уменьшаем размер шрифта вложенного текста */
+    font-size: 80%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
 .button-text span {
-    font-size: 50%; /* Уменьшаем размер шрифта вложенного текста */
+    font-size: 80%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
 /* .search {
