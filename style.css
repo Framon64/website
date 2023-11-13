@@ -1,7 +1,11 @@
 * {
+   
+    margin-top: 2px;    
+    max-width: 406px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
 }
+
 
 header {
     display: flex;
@@ -12,15 +16,15 @@ header {
 
 .profile1 {
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    height: 25px;
+    width: 25px;
     vertical-align: middle;
 }
 
 .profile2 {
     border-radius: 50%;
-    height: 10px;
-    width: 10px;
+    height: 20px;
+    width: 20px;
     vertical-align: middle;
 }
 
@@ -40,7 +44,6 @@ header {
     background-color: #f0f0f0;
     text-decoration: none;
 }
-
 
 
 .button-text {
@@ -65,30 +68,34 @@ header {
 }
 
 .left a {
-    font-size: 40%;
+    font-size: 50%;
     text-decoration: none;
 ;
 }
 
 .left span {
-    font-size: 40%;
+    font-size: 50%;
 }
 
 
 
 .button-text {
-    font-size: 40%; /* Уменьшаем размер шрифта вложенного текста */
+    font-size: 50%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
 .button-text span {
     font-size: 50%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
+/* .search {
+    max-width: 350px;
+} */
+
 .search input {
-    width: 390px;
     border-radius: 8px;
     border: 0;
     background-color: #bbb2b2;
+    width: 363px;
 }
 
 .icon {
