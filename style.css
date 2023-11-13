@@ -2,8 +2,7 @@
     margin-top: 2px;    
     max-width: 406px;
     color: var(--tg-theme-text-color);
-    background: var(--tg-theme-bg-color);
-    
+    background: #dcdcdc;
 }
 
 header {
@@ -83,15 +82,15 @@ header {
     font-size: 80%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
-
+/* .search {
+    max-width: 350px;
+} */
 
 .search input {
-    display: flex;
-    align-items: center;
     border-radius: 8px;
     border: 0;
-    background-color: #bbb2b2;
-    width: 200px;
+    background: var(--tg-theme-bg-color);
+    width: 363px;
 }
 
 .icon {
