@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     max-width: 390px;
-    
+    background-color: var(--tg-theme-bg-color);
 }
 
 .profile1 {
@@ -38,6 +38,7 @@ header {
     border-radius: 10px;
     border: 0;
     text-decoration: none;
+    background: var(--tg-theme-bg-color);
 }
 
 
@@ -89,7 +90,6 @@ header {
 .search input {
     border-radius: 8px;
     border: 0;
-    background: var(--tg-theme-bg-color);
     width: 363px;
 }
 
