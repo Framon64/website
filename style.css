@@ -1,11 +1,12 @@
 * {   
     margin-top: 2px;    
     max-width: 406px;
-    color: var(--tg-theme-text-color);
+    background: #dcdcdc;
 }
 
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     max-width: 390px;
     background-color: var(--tg-theme-bg-color);
@@ -13,15 +14,15 @@ header {
 
 .profile1 {
     border-radius: 50%;
-    height: 70px;
-    width: 70px;
+    height: 55px;
+    width: 55px;
     vertical-align: middle;
 }
 
 .profile2 {
     border-radius: 50%;
-    height: 55px;
-    width: 55px;
+    height: 30px;
+    width: 30px;
     vertical-align: middle;
 }
 
@@ -30,6 +31,8 @@ header {
     border-radius: 10px;
     border: 0;
     text-decoration: none;
+    width: 120px;
+    height: 37px;
 }
 
 .button-item a{
@@ -37,17 +40,24 @@ header {
     border-radius: 10px;
     border: 0;
     text-decoration: none;
-    background: var(--tg-theme-bg-color);
+    background: white;
 }
 
 
 .button-text {
     display: flex;
     flex-direction: column;
-    margin: 1px;       
+    margin: 5px; 
+    color: black;
+    background: 0;      
+}
+
+.arrow img {
+    margin-top: 40px;
 }
 
 .arrow {
+    margin-top: 22px;
     height: 5px;
     width: 5px;
     vertical-align: middle; 
@@ -65,33 +75,42 @@ header {
 .left a {
     font-size: 100%;
     text-decoration: none;
+    background: 0;
 ;
 }
 
 .left span {
     margin-top: 20px;
-    font-size: 25;
+    font-size: 70%;
+    background: 0;
 }
 
 
 
 .button-text {
-    margin-top: 15px;
-    font-size: 25; /* Уменьшаем размер шрифта вложенного текста */
+    background: 0;
+    margin-top: 5px;
+    font-size: 70%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
 .button-text span {
-    font-size: 25; /* Уменьшаем размер шрифта вложенного текста */
+    font-size: 50%;
+    background: 0; /* Уменьшаем размер шрифта вложенного текста */
 }
 
-/* .search {
-    max-width: 350px;
-} */
+.search {
+    background: white;
+    border-radius: 8px;
+    border: 0;
+    width: 390px;
+    margin-top: 20px;
+}
 
 .search input {
     border-radius: 8px;
     border: 0;
     width: 363px;
+    
 }
 
 .search input:focus {
@@ -117,12 +136,15 @@ header {
 .product {
     border: 1px solid #ddd;
     padding: 10px;
+    border-radius: 8px;
     text-align: center;
     transition: transform 0.3s;
+    background: white;
 }
 
 .product:hover {
     transform: scale(1.05);
+    background: white;
 }
 
 .product img {
@@ -130,18 +152,25 @@ header {
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
+    background: white;
 }
 
 .product-title {
     font-size: 18px;
     font-weight: bold;
+    background: white;
 }
 
 .product-description {
     display: none;
     margin-top: 10px;
+    background: white;
 }
 
 .product:hover .product-description {
     display: block;
+    background: white;
+}
+.product-price {
+    background: white;
 }

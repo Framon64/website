@@ -1,6 +1,8 @@
 var productsData = [
-    { name: 'Товар 1', description: 'Описание товара 1', price: '$10.99' },
-    { name: 'Товар 2', description: 'Описание товара 2', price: '$19.99' },
+    { image: 'photo_2019-02-12_23-50-47.jpg', name: 'Товар 1', description: 'Описание товара 1', price: '$10.99' },
+    { image: 'no_photo.png', name: 'Товар 2', description: 'Снюс — вид некурительного табачного изделия.', price: '$19.99' },
+    { image: 'photo_2019-02-12_23-50-47.jpg', name: 'Товар 1', description: 'Описание товара 1', price: '$10.99' },
+    { image: 'photo_2019-02-12_23-50-47.jpg', name: 'Товар 2', description: 'Описание товара 2', price: '$19.99' },
     // Добавьте другие товары по аналогии
 ];
 
@@ -17,7 +19,7 @@ function renderProducts(products) {
         var productElement = document.createElement('div');
         productElement.className = 'product';
         productElement.innerHTML = `
-            <img src="no_photo.png" alt="${product.name}">
+            <img src=${product.image} alt="${product.name}">
             <div class="product-title">${product.name}</div>
             <div class="product-description">${product.description}</div>
             <div class="product-price">Цена: ${product.price}</div>
