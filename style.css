@@ -83,16 +83,15 @@ header {
     font-size: 80%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
-/* .search {
-    max-width: 350px;
-} */
+
 
 .search input {
-    margin: 5px;
+    display: flex;
+    align-items: center;
     border-radius: 8px;
     border: 0;
     background-color: #bbb2b2;
-    width: 350px;
+    width: 200px;
 }
 
 .icon {
