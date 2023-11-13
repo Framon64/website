@@ -92,6 +92,11 @@ header {
     width: 363px;
 }
 
+.search input:focus {
+    outline: none; /* Убираем обводку при фокусе */
+    border: none; /* Убираем границы */
+}
+
 .icon {
     padding-left: 25px;
     background: url("search-interface-symbol.png") no-repeat scroll 3px 1px;

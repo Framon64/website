@@ -1,4 +1,3 @@
-
 var productsData = [
     { name: 'Товар 1', description: 'Описание товара 1', price: '$10.99' },
     { name: 'Товар 2', description: 'Описание товара 2', price: '$19.99' },
@@ -31,9 +30,9 @@ function renderProducts(products) {
 function filterProducts(query) {
     query = query.toLowerCase();
 
-    if (query === '') {
-        // Если поле поиска пустое, не отображаем товары
-        renderProducts([]);
+    if (!query) {
+        // Если поле поиска пустое, отображаем все товары
+        renderProducts(productsData);
         return;
     }
 
