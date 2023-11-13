@@ -1,4 +1,27 @@
-body{
-    background-color: #bcd8df;
-    font-family: system-ui;
+.header {
+    align-items: center;
+}
+
+.profile {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+.button-item {
+    
+    border-radius: 8px;
+    border: 0;
+}
+
+
+.button-text {
+    
+    flex-direction: column;
+        
+}
+
+.button-text span {
+    font-size: 30%; /* Уменьшаем размер шрифта вложенного текста */
 }
