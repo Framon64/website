@@ -3,6 +3,7 @@
     max-width: 406px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
+    background-color: var(--tg-theme-button-color);
 }
 
 
@@ -31,7 +32,6 @@ header {
     display: flex;
     border-radius: 10px;
     border: 0;
-    background: var(--tg-theme-bg-color);
     text-decoration: none;
 }
 
