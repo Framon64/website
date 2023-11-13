@@ -3,6 +3,7 @@
     max-width: 406px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
+    
 }
 
 header {
@@ -87,10 +88,11 @@ header {
 } */
 
 .search input {
+    margin: 5px;
     border-radius: 8px;
     border: 0;
     background-color: #bbb2b2;
-    width: 363px;
+    width: 350px;
 }
 
 .icon {
@@ -105,6 +107,7 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    margin-top: 20px;
 }
 
 .product {
