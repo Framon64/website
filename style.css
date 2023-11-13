@@ -14,15 +14,17 @@ header {
 
 .profile1 {
     border-radius: 50%;
-    height: 55px;
-    width: 55px;
+    height: 40px;
+    width: 40px;
     vertical-align: middle;
 }
 
 .profile2 {
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
+    margin: auto;
+    margin-left: 2px;
     vertical-align: middle;
 }
 
@@ -43,7 +45,6 @@ header {
     background: white;
 }
 
-
 .button-text {
     display: flex;
     flex-direction: column;
@@ -57,7 +58,8 @@ header {
 }
 
 .arrow {
-    margin-top: 22px;
+    margin-top: -62px;
+    margin-left: 132px;
     height: 5px;
     width: 5px;
     vertical-align: middle; 
@@ -73,28 +75,46 @@ header {
 }
 
 .left a {
-    font-size: 100%;
+    font-size: 25;
     text-decoration: none;
     background: 0;
-;
 }
 
 .left span {
-    margin-top: 20px;
-    font-size: 70%;
+    margin-top: 4px;
+    font-size: 25;
+    margin-left: 7px;
     background: 0;
 }
 
+.button1-text {
+    background: 0;
+    margin-top: 1px;
+    font-size: 90%;
+    color: black; /* Уменьшаем размер шрифта вложенного текста */
+}
 
+.button1-text span {
+    display: block;
+    text-align: center;
+    margin-top: -12px;
+    margin-left: 75px;
+    padding: 1px;
+    border-radius: 8px;
+    width: 35px;
+    font-size: 50%;
+    color: white;
+    background: black; /* Уменьшаем размер шрифта вложенного текста */
+}
 
 .button-text {
     background: 0;
     margin-top: 5px;
-    font-size: 70%; /* Уменьшаем размер шрифта вложенного текста */
+    font-size: 80%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
 .button-text span {
-    font-size: 50%;
+    font-size: 40%;
     background: 0; /* Уменьшаем размер шрифта вложенного текста */
 }
 
