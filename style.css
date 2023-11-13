@@ -1,31 +1,100 @@
+* {
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+}
+
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     max-width: 390px;
     
 }
 
-.profile {
+.profile1 {
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+}
+
+.profile2 {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
     vertical-align: middle;
 }
 
 .button-item {
-    
-    border-radius: 8px;
+    display: flex;
+    border-radius: 10px;
     border: 0;
+    background-color: #f0f0f0;
+    text-decoration: none;
 }
+
+.button-item a{
+    display: flex;
+    border-radius: 10px;
+    border: 0;
+    color: var(--tg-theme-text-color);
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
 
 
 .button-text {
-    
+    display: flex;
     flex-direction: column;
-        
+    margin: 1px;       
+}
+
+.arrow {
+    height: 5px;
+    width: 5px;
+    vertical-align: middle; 
+
+}
+.left {
+    display: flex;
+}
+
+.rith {
+    display: flex;
+    
+}
+
+.left a {
+    font-size: 40%;
+    text-decoration: none;
+;
+}
+
+.left span {
+    font-size: 40%;
+}
+
+
+
+.button-text {
+    font-size: 40%; /* Уменьшаем размер шрифта вложенного текста */
 }
 
 .button-text span {
-    font-size: 30%; /* Уменьшаем размер шрифта вложенного текста */
+    font-size: 50%; /* Уменьшаем размер шрифта вложенного текста */
+}
+
+.search input {
+    width: 390px;
+    border-radius: 8px;
+    border: 0;
+    background-color: #bbb2b2;
+}
+
+.icon {
+    padding-left: 25px;
+    background: url("search-interface-symbol.png") no-repeat scroll 3px 1px;
+    background-size: 15px;
+    
+
 }
