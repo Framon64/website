@@ -31,7 +31,7 @@ header {
     display: flex;
     border-radius: 10px;
     border: 0;
-    background-color: #f0f0f0;
+    background: var(--tg-theme-bg-color);
     text-decoration: none;
 }
 
@@ -39,8 +39,6 @@ header {
     display: flex;
     border-radius: 10px;
     border: 0;
-    color: var(--tg-theme-text-color);
-    background-color: #f0f0f0;
     text-decoration: none;
 }
 
