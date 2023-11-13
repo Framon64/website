@@ -9,7 +9,6 @@ header {
     align-items: center;
     justify-content: space-between;
     max-width: 390px;
-    background-color: var(--tg-theme-bg-color);
 }
 
 .profile1 {
