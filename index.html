@@ -7,48 +7,80 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    body{
-       display: flex;
-       color: var(--tg-theme-text-color);
-       background: var(--tg-theme-bg-color);
-       align-items: center;
-       flex-direction: column;
-       font-size: 20px;
-    }
-
-    .hint{
-       color: var(--tg-theme-hint-color);
-    }
-
-    .link{
-       color: var(--tg-theme-link-color);
-    }
-
-    .button{
-       background: var(--tg-theme-button-color);
-       color: var(--tg-theme-button-text-color);
-       border: none;
-       font-size: 20px;
-    }
-
-    .button:not(:last-child){
-       margin-bottom: 15px
-    }
-
-    #usercard{
-       text-align: center;
-    }
- </style>
-</head>
 <body>
- <div id="usercard"> <!--Карточка профиля пользователя, который обращается к веб-приложению-->
- </div>
- <p>Здесь текст о компании ChatLabs</p> <!--Используем для проверки-->
- <a class="link" href="https://telegram/chatlabs.ru/">Ссылка на ChatLabs</a> <!--Используем для проверки, что вебприложение Телеграмма работает-->
- <p class="hint">Текст подсказки от ChatLabs</p> <!--Проверка-->
- <button id="button" class="button">Показать или скрыть основную кнопку </button> 
- <button id="btnEdit" class="button">Активировать кнопку / сделать неактивной</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
-</body>
+    <header>
+        <div class="left">
+            <img  src="photo_2019-02-12_23-50-47.jpg" class="profile1">
+            <span>Thepriceofart</span>
+            <a href="#">
+                <img src="right-arrow.png" class="arrow">
+            </a>
+        </div>
+        <div class="rith">
+            <button class="button-item">
+                <a href="https://t.me/the_price_of_art">
+                    <img src="telegram (1).png" class="profile2">
+                    <span class="button-text">
+                        @Thepriceofart
+                        <span>Наш телеграм канал</span>
+                    </span>
+                </a>
+            </button>
+        </div>
+    </header>
+    <div class="search">
+        <input type="Поиск" class="icon" placeholder="поиск">
+    </div>
+    <div class="grid-container">
+        <div class="product">
+            <img src="no_photo.png" alt="Product 1">
+            <div class="product-title">Товар 1</div>
+            <div class="product-description">Описание товара 1</div>
+            <div class="product-price">Цена: $10.99</div>
+        </div>
+    
+        <div class="product">
+            <img src="no_photo.png" alt="Product 3">
+            <div class="product-title">Товар 2</div>
+            <div class="product-description">Описание товара 2</div>
+            <div class="product-price">Цена: $19.99</div>
+        </div>
+
+        <div class="product">
+            <img src="no_photo.png" alt="Product 4">
+            <div class="product-title">Товар 2</div>
+            <div class="product-description">Описание товара 2</div>
+            <div class="product-price">Цена: $19.99</div>
+        </div>
+
+        <div class="product">
+            <img src="no_photo.png" alt="Product 5">
+            <div class="product-title">Товар 2</div>
+            <div class="product-description">Описание товара 2</div>
+            <div class="product-price">Цена: $19.99</div>
+        </div>
+
+        <div class="product">
+            <img src="no_photo.png" alt="Product 6">
+            <div class="product-title">Товар 2</div>
+            <div class="product-description">Описание товара 2</div>
+            <div class="product-price">Цена: $19.99</div>
+        </div>
+
+        <div class="product">
+            <img src="no_photo.png" alt="Product 7">
+            <div class="product-title">Товар 2</div>
+            <div class="product-description">Описание товара 2</div>
+            <div class="product-price">Цена: $19.99</div>
+        </div>
+
+
+    
+        <!-- Добавьте другие товары по аналогии -->
+    
+    </div>
+        
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
